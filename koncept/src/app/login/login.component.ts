@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       'password': this.loginForm.controls['password'].value,
     }
     this._resources.validateUser(obj).then((response: any) => {
+      localStorage.setItem('userName', response.userName);
+      localStorage.setItem('key', response.key);
       this.router.navigate(['home']);
     })
     .catch(error => {
@@ -37,9 +39,5 @@ export class LoginComponent implements OnInit {
             this.message = error;
         }
     })
-  }
-  logout(){
-    alert();
-    this.router.navigate(['signin']);
   }
 }

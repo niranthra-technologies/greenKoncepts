@@ -13,6 +13,12 @@ export class CommunicationService {
     });
   }
 
+  post = (slug: string, data?: any, custom?: any) => {
+      return new Promise((resolve, reject) => {
+          this.call('POST', slug, resolve, reject, undefined, data, custom);
+      });
+  }
+
   protected call = (method, url, s, f, p, payload?, custom?) => {
     const request = new HttpRequest(method, url, payload, {
         headers: new HttpHeaders((custom && custom.headers) || {}),
@@ -46,7 +52,7 @@ export class CommunicationService {
                     if (
                         error.status !== 401 &&
                         error.url.indexOf('login') === -1
-                    ) {
+                      ) {
                         f(error);
                     } else {
                         f(error.error);

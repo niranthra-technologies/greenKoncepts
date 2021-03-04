@@ -6,13 +6,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  userNameLoggedIn:string;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.userNameLoggedIn = localStorage.getItem('userName');
   }
   logout(){
-    alert();
     this.router.navigate(['signin']);
+    localStorage.removeItem('userName');
   }
 }

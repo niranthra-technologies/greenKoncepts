@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-7">
+        <a routerLink="/home">Back</a>
+        <form [formGroup]="customerForm">
+            <div class="text-center">
+                <h2>Add Customer Details</h2>
+            </div>
+            <div class="row marginTop20">
+                <div class="col-sm-3">
+                    <label for="customerName">Customer Name</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" id="customerName" class="form-control" placeholder="Customer Name" formControlName="customername" autofocus>
+                </div>
+            </div>
+            <div class="row marginTop20">
+                <div class="col-sm-3">
+                    <label for="customerAge">Age</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="number" id="customerAge" class="form-control" placeholder="Age" formControlName="customerage" required>
+                </div>
+            </div>
+            <div class="row marginTop20">
+                <div class="col-sm-3">
+                    <label for="address">Address</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea class="form-control" id="address" formControlName="address" required>
+                    </textarea>
+                </div>
+            </div>
+            <div class="row marginTop20">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-8">
+                    <button [disabled]="!customerForm.valid" class="btn btn-success marginRight10" (click)="saveDetails()" type="submit">Save</button>
+                    <button class="btn btn-secondary" routerLink="/home">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

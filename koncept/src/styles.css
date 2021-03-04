@@ -35,3 +35,12 @@
       border-radius:20px;
       padding:20px;
   }
+  .marginTop20{
+      margin-top: 20px;
+  }
+  .marginRight10{
+      margin-right:10px;
+  }
+  .input.ng-touched.ng-invalid {
+      border:1px solid red;
+  }

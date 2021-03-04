@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-7">
+        <a routerLink="/home">Back</a>
+        <div class="text-center">
+            <h2>View Customer Details</h2>
+        </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Order Detail</th>
+                <th scope="col">Order Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of ordersList">
+                <th scope="row">{{order.customer.customerName}}</th>
+                <td>{{order.orderDate}}</td>
+                <td>{{order.orderDetail}}</td>
+                <td>{{order.orderAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

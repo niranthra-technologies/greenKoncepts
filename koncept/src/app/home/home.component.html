@@ -3,7 +3,8 @@
         <h2>Welcome to Green Koncepts</h2>
     </div>
     <div class="col-sm-3 text-right">
-        <a> Login </a>
+        <a> {{userNameLoggedIn}} </a>
+        <span>|</span>
         <a (click)="logout()"> Logout </a>
     </div>
 </div>
@@ -19,12 +20,12 @@
             </div>
             <div class="col-sm-4">
                 <div class="card-view">
-                    Customer
+                    <a routerLink="/customers">Customer</a>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="card-view">
-                   Orders
+                  <a routerLink="/orders">Orders</a> 
                 </div>
             </div>
         </div>
