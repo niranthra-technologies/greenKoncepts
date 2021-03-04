@@ -23,7 +23,6 @@ export class CustomersComponent implements OnInit {
   }
 
   saveDetails(){
-    alert();
     var obj = {
       'customerName': this.customerForm.controls['customername'].value,
       'customerAge': this.customerForm.controls['customerage'].value,
